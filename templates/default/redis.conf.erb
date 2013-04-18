@@ -209,7 +209,7 @@ appendfsync <%= @appendfsync %>
 
 # vm-enabled no
 # vm-enabled yes
-vm-enabled <%= @vm[:enabled] %>
+vm-enabled <%= @vm['enabled'] %>
 
 # This is the path of the Redis swap file. As you can guess, swap files
 # can't be shared by different Redis instances, so make sure to use a swap
@@ -232,7 +232,7 @@ vm-swap-file /var/lib/redis/redis.swap
 # default, just specify the max amount of RAM you can in bytes, but it's
 # better to leave some margin. For instance specify an amount of RAM
 # that's more or less between 60 and 80% of your free RAM.
-vm-max-memory <%= @vm[:max_memory] %>
+vm-max-memory <%= @vm['max_memory'] %>
 
 # Redis swap files is split into pages. An object can be saved using multiple
 # contiguous pages, but pages can't be shared between different objects.
@@ -243,7 +243,7 @@ vm-max-memory <%= @vm[:max_memory] %>
 # If you use a lot of small objects, use a page size of 64 or 32 bytes.
 # If you use a lot of big objects, use a bigger page size.
 # If unsure, use the default :)
-vm-page-size <%= @vm[:page_size] %>
+vm-page-size <%= @vm['page_size'] %>
 
 # Number of total memory pages in the swap file.
 # Given that the page table (a bitmap of free/used pages) is taken in memory,
@@ -256,7 +256,7 @@ vm-page-size <%= @vm[:page_size] %>
 #
 # It's better to use the smallest acceptable value for your application,
 # but the default is large in order to work in most conditions.
-vm-pages <%= @vm[:pages] %>
+vm-pages <%= @vm['pages'] %>
 
 # Max number of VM I/O threads running at the same time.
 # This threads are used to read/write data from/to swap file, since they
@@ -267,7 +267,7 @@ vm-pages <%= @vm[:pages] %>
 #
 # The special value of 0 turn off threaded I/O and enables the blocking
 # Virtual Memory implementation.
-vm-max-threads <%= @vm[:max_threads] %>
+vm-max-threads <%= @vm['max_threads'] %>
 
 ############################### ADVANCED CONFIG ###############################
 

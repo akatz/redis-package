@@ -34,7 +34,7 @@ template "/etc/redis/redis.conf" do
   group "root"
   mode "644"
   variables({
-    :vm => node[:redis][:vm]
+    :vm => node['redis']['vm']
   })
   notifies :restart, resources(:service => "redis")
 end
